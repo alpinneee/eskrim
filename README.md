@@ -1,66 +1,216 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ice Cream Heavenly 🍦
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem manajemen toko es krim berbasis web yang dibangun dengan Laravel. Website ini menyediakan platform lengkap untuk mengelola penjualan es krim dengan tiga role pengguna yang berbeda.
 
-## About Laravel
+## Tentang Website
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ice Cream Heavenly adalah aplikasi web untuk manajemen toko es krim yang memiliki fitur:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🎯 **Fitur Utama**
+- **Multi-Role System**: Admin, Kasir, dan Pelanggan
+- **Manajemen Produk**: CRUD produk es krim dengan kategori
+- **Sistem Transaksi**: Pembelian, pembayaran, dan riwayat transaksi
+- **Dashboard Analytics**: Statistik penjualan dan laporan
+- **Responsive Design**: Tampilan yang optimal di semua perangkat
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👥 **Role Pengguna**
 
-## Learning Laravel
+#### 🔧 **Admin**
+- Dashboard dengan statistik lengkap
+- Manajemen pengguna (kasir dan pelanggan)
+- Manajemen produk es krim
+- Laporan penjualan dan analytics
+- Monitoring performa kasir
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### 💼 **Kasir**
+- Dashboard kasir dengan statistik harian
+- Proses transaksi penjualan
+- Manajemen produk (view dan update stok)
+- Laporan transaksi kasir
+- Interface yang user-friendly
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### 🛒 **Pelanggan**
+- Browse menu es krim dengan filter kategori
+- Keranjang belanja dan checkout
+- Riwayat transaksi pembelian
+- Profil dan manajemen akun
+- Sistem notifikasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎨 **Teknologi yang Digunakan**
+- **Backend**: Laravel 10
+- **Frontend**: Tailwind CSS
+- **Database**: MySQL
+- **Authentication**: Laravel Auth
+- **Charts**: Chart.js
+- **Icons**: SVG Icons & Emoji
 
-## Laravel Sponsors
+## 📋 Persyaratan Sistem
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL/MariaDB
+- XAMPP/WAMP/MAMP (untuk development lokal)
 
-### Premium Partners
+## 🚀 Cara Instalasi di Localhost
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 1. **Clone Repository**
+```bash
+git clone https://github.com/alpinneee/eskrim.git
+cd eskrim
+```
 
-## Contributing
+### 2. **Install Dependencies**
+```bash
+# Install PHP dependencies
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Install Node.js dependencies
+npm install
+```
 
-## Code of Conduct
+### 3. **Konfigurasi Environment**
+```bash
+# Copy file environment
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Generate application key
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+### 4. **Konfigurasi Database**
+Edit file `.env` dan sesuaikan konfigurasi database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=icecreamheavenly
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. **Setup Database**
+```bash
+# Buat database di MySQL
+# Kemudian jalankan migrasi
+php artisan migrate
 
-## License
+# (Opsional) Jalankan seeder untuk data dummy
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. **Build Assets**
+```bash
+# Compile CSS dan JS
+npm run build
+
+# Atau untuk development dengan hot reload
+npm run dev
+```
+
+### 7. **Jalankan Server**
+```bash
+# Start Laravel development server
+php artisan serve
+```
+
+Website akan dapat diakses di: `http://127.0.0.1:8000`
+
+## 🔐 Default Login
+
+Setelah menjalankan seeder, Anda dapat login dengan akun berikut:
+
+### Admin
+- **Email**: admin@icecream.com
+- **Password**: password
+
+### Kasir
+- **Email**: kasir@icecream.com
+- **Password**: password
+
+### Pelanggan
+- **Email**: pelanggan@icecream.com
+- **Password**: password
+
+## 📱 Fitur Utama Website
+
+### 🏠 **Dashboard**
+- **Admin**: Statistik lengkap, grafik penjualan, manajemen user
+- **Kasir**: Statistik harian, transaksi terbaru, performa
+- **Pelanggan**: Statistik pembelian, riwayat, profil
+
+### 🍨 **Manajemen Produk**
+- CRUD produk es krim
+- Kategori produk (Vanilla, Chocolate, Strawberry, dll)
+- Upload gambar produk
+- Manajemen stok dan harga
+
+### 🛒 **Sistem Transaksi**
+- Keranjang belanja dengan update quantity
+- Checkout dengan multiple payment methods
+- Generate QR Code untuk pembayaran
+- Tracking status transaksi
+
+### 📊 **Laporan & Analytics**
+- Grafik penjualan harian/bulanan
+- Top selling products
+- Customer analytics
+- Export laporan ke PDF/Excel
+
+### 🔔 **Sistem Notifikasi**
+- Notifikasi transaksi berhasil
+- Promo dan penawaran khusus
+- Update status pesanan
+- Filter notifikasi berdasarkan kategori
+
+## 🎨 **Design System**
+
+Website menggunakan design system yang konsisten:
+- **Warna Utama**: Blue (#3a7bd5) untuk semua role
+- **Typography**: Font modern dengan hierarchy yang jelas
+- **Components**: Card-based layout dengan shadow dan rounded corners
+- **Responsive**: Mobile-first approach dengan Tailwind CSS
+
+## 📁 Struktur Project
+
+```
+icecreamheavenly/
+├── app/
+│   ├── Http/Controllers/     # Controllers untuk setiap role
+│   ├── Models/              # Eloquent models
+│   └── Middleware/          # Custom middleware
+├── resources/
+│   ├── views/
+│   │   ├── admin/          # Views untuk admin
+│   │   ├── cashier/        # Views untuk kasir
+│   │   ├── pelanggan/      # Views untuk pelanggan
+│   │   └── auth/           # Views authentication
+│   └── css/                # Tailwind CSS files
+├── routes/
+│   └── web.php             # Route definitions
+└── database/
+    ├── migrations/         # Database migrations
+    └── seeders/           # Database seeders
+```
+
+## 🤝 Kontribusi
+
+Jika Anda ingin berkontribusi pada project ini:
+
+1. Fork repository
+2. Buat branch fitur baru (`git checkout -b fitur-baru`)
+3. Commit perubahan (`git commit -am 'Tambah fitur baru'`)
+4. Push ke branch (`git push origin fitur-baru`)
+5. Buat Pull Request
+
+## 📄 Lisensi
+
+Project ini menggunakan lisensi MIT. Lihat file `LICENSE` untuk detail lengkap.
+
+## 📞 Kontak
+
+Jika ada pertanyaan atau masalah, silakan buat issue di repository ini.
+
+---
+
+**Dibuat dengan ❤️ menggunakan Laravel & Tailwind CSS**
